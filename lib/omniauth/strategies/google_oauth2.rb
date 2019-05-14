@@ -94,6 +94,7 @@ module OmniAuth
         image_params << 'c' if options[:image_aspect_ratio] == 'square'
 
         params_index = original_url.index('/photo.jpg')
+        return original_url if params_index.nil?
         original_url.insert(params_index, ('/' + image_params.join('-')))
       end
 
